@@ -8,14 +8,14 @@ A fully automated async pipeline that produces realistic, fictional PDF resumes 
 
 ## Features
 
-- **Async bulk generation** - 5-10x faster with concurrent API calls
-- **Cost tracking** - Per-resume and total cost displayed in real-time
-- **26 industries** with IT/tech focus - Software, Cloud, AI/ML, Cybersecurity, DevOps, Fintech, and more
-- **Industry-role correlation** - Realistic role matching per industry
-- **Seniority-aware content** - Junior/Mid/Senior resume patterns
-- **4 professional templates** - Modern, Minimal, Classic, Corporate
-- **JSON structured output** - Token-efficient LLM responses
-- **Rich CLI** - Progress bars, stats, and summaries
+-   **Async bulk generation** - 5-10x faster with concurrent API calls
+-   **Cost tracking** - Per-resume and total cost displayed in real-time
+-   **26 industries** with IT/tech focus - Software, Cloud, AI/ML, Cybersecurity, DevOps, Fintech, and more
+-   **Industry-role correlation** - Realistic role matching per industry
+-   **Seniority-aware content** - Junior/Mid/Senior resume patterns
+-   **4 professional templates** - Modern, Minimal, Classic, Corporate
+-   **JSON structured output** - Token-efficient LLM responses
+-   **Rich CLI** - Progress bars, stats, and summaries
 
 ---
 
@@ -48,6 +48,7 @@ pip install -r requirements.txt
 ```
 
 **Note:** Ensure these packages are in requirements.txt:
+
 ```
 faker
 jinja2
@@ -60,11 +61,13 @@ rich
 ### 2. Install system packages for WeasyPrint
 
 **Ubuntu/Debian:**
+
 ```sh
 sudo apt install libpango-1.0-0 libcairo2 libffi-dev gdk-pixbuf2.0-0
 ```
 
 **macOS (Homebrew):**
+
 ```sh
 brew install cairo pango gdk-pixbuf libffi
 ```
@@ -91,11 +94,11 @@ python generate.py -n 50 --save-costs # Generate 50 + save cost log
 
 ### CLI Options
 
-| Option | Description |
-|--------|-------------|
-| `-n, --count` | Number of resumes to generate (default: 800) |
-| `--save-costs` | Save detailed cost log to `output/cost_log.json` |
-| `--concurrency` | Max concurrent API requests (default: 15) |
+| Option          | Description                                      |
+| --------------- | ------------------------------------------------ |
+| `-n, --count`   | Number of resumes to generate (default: 800)     |
+| `--save-costs`  | Save detailed cost log to `output/cost_log.json` |
+| `--concurrency` | Max concurrent API requests (default: 15)        |
 
 ### Example Output
 
@@ -138,18 +141,21 @@ PDFs saved to: /path/to/output/
 ## Industries (26)
 
 **IT/Tech Focus:**
-- Software Engineering, DevOps & SRE, Cloud Computing
-- Data Science & AI, Data Engineering, Cybersecurity
-- IT Support & Operations, Game Development, QA & Testing
-- Product Management, UI/UX Design
+
+-   Software Engineering, DevOps & SRE, Cloud Computing
+-   Data Science & AI, Data Engineering, Cybersecurity
+-   IT Support & Operations, Game Development, QA & Testing
+-   Product Management, UI/UX Design
 
 **Specialized Tech:**
-- Fintech, EdTech, HealthTech
+
+-   Fintech, EdTech, HealthTech
 
 **Traditional:**
-- Finance, Accounting, Healthcare, Marketing, Sales
-- HR & Recruiting, Manufacturing, Construction
-- Retail, Logistics, Energy, Banking
+
+-   Finance, Accounting, Healthcare, Marketing, Sales
+-   HR & Recruiting, Manufacturing, Construction
+-   Retail, Logistics, Energy, Banking
 
 ---
 
@@ -163,7 +169,7 @@ Add `.html` files in `templates/` using Jinja2 syntax:
 <h1>{{ name }}</h1>
 <p>{{ summary }}</p>
 {% for job in experience %}
-  <div>{{ job.title }} at {{ job.company }}</div>
+<div>{{ job.title }} at {{ job.company }}</div>
 {% endfor %}
 ```
 
@@ -175,11 +181,11 @@ Edit `data/role_mapping.json`:
 
 ```json
 {
-  "New Industry": {
-    "primary": ["Role 1", "Role 2"],
-    "secondary": ["Senior Role 1"],
-    "weights": [0.7, 0.3]
-  }
+	"New Industry": {
+		"primary": ["Role 1", "Role 2"],
+		"secondary": ["Senior Role 1"],
+		"weights": [0.7, 0.3]
+	}
 }
 ```
 
@@ -196,10 +202,10 @@ PRICE_OUTPUT_PER_1M = 0.40  # $/1M output tokens
 
 ## Performance
 
-| Metric | Sequential | Async (15 concurrent) |
-|--------|------------|----------------------|
-| 100 resumes | ~10 min | ~1.5 min |
-| 800 resumes | ~80 min | ~12 min |
+| Metric      | Sequential | Async (15 concurrent) |
+| ----------- | ---------- | --------------------- |
+| 100 resumes | ~10 min    | ~1.5 min              |
+| 800 resumes | ~80 min    | ~12 min               |
 
 ---
 
@@ -224,12 +230,15 @@ When using `--save-costs`, creates `output/cost_log.json`:
 ## Troubleshooting
 
 ### WeasyPrint fails to load fonts/libraries
+
 Install required system packages (see Installation).
 
 ### Rate limiting errors
+
 Reduce concurrency: `python generate.py --concurrency 5`
 
 ### JSON parsing errors
+
 The LLM occasionally returns malformed JSON. Errors are logged and that resume is skipped.
 
 ---
