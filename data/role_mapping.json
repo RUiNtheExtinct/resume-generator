@@ -1,0 +1,132 @@
+{
+  "Software Engineering": {
+    "primary": ["Software Engineer", "Backend Developer", "Frontend Developer", "Full Stack Engineer", "Mobile Developer", "Embedded Systems Engineer"],
+    "secondary": ["Engineering Manager", "Principal Engineer", "Staff Engineer", "Technical Lead"],
+    "weights": [0.7, 0.3]
+  },
+  "DevOps & SRE": {
+    "primary": ["DevOps Engineer", "Site Reliability Engineer", "Platform Engineer", "Infrastructure Engineer", "Release Engineer"],
+    "secondary": ["DevOps Lead", "SRE Manager", "Director of Infrastructure"],
+    "weights": [0.7, 0.3]
+  },
+  "Cloud Computing": {
+    "primary": ["Cloud Engineer", "Cloud Architect", "Cloud Solutions Architect", "AWS Engineer", "Azure Engineer", "GCP Engineer"],
+    "secondary": ["Cloud Director", "VP of Cloud Infrastructure", "Chief Cloud Architect"],
+    "weights": [0.65, 0.35]
+  },
+  "Data Science & AI": {
+    "primary": ["Data Scientist", "Machine Learning Engineer", "AI Engineer", "Research Scientist", "NLP Engineer", "Computer Vision Engineer"],
+    "secondary": ["Head of Data Science", "ML Lead", "Director of AI"],
+    "weights": [0.7, 0.3]
+  },
+  "Data Engineering": {
+    "primary": ["Data Engineer", "Data Analyst", "Analytics Engineer", "BI Developer", "ETL Developer", "Database Administrator"],
+    "secondary": ["Data Engineering Manager", "Director of Data", "Chief Data Officer"],
+    "weights": [0.7, 0.3]
+  },
+  "Cybersecurity": {
+    "primary": ["Security Analyst", "Security Engineer", "Penetration Tester", "SOC Analyst", "Threat Intelligence Analyst", "Security Consultant"],
+    "secondary": ["CISO", "Security Architect", "Director of Security", "VP of Security"],
+    "weights": [0.65, 0.35]
+  },
+  "IT Support & Operations": {
+    "primary": ["IT Support Specialist", "Help Desk Technician", "System Administrator", "Network Administrator", "IT Technician"],
+    "secondary": ["IT Manager", "Director of IT Operations", "VP of IT"],
+    "weights": [0.65, 0.35]
+  },
+  "Game Development": {
+    "primary": ["Game Developer", "Game Designer", "Unity Developer", "Unreal Engine Developer", "Graphics Programmer", "Gameplay Engineer"],
+    "secondary": ["Lead Game Developer", "Game Director", "Studio Technical Director"],
+    "weights": [0.7, 0.3]
+  },
+  "Fintech": {
+    "primary": ["Fintech Engineer", "Payments Engineer", "Blockchain Developer", "Quantitative Developer", "Trading Systems Engineer"],
+    "secondary": ["Fintech Lead", "Head of Engineering", "VP of Technology"],
+    "weights": [0.65, 0.35]
+  },
+  "EdTech": {
+    "primary": ["EdTech Developer", "Learning Platform Engineer", "Instructional Designer", "Educational Content Developer", "LMS Developer"],
+    "secondary": ["EdTech Product Manager", "Director of Engineering", "CTO"],
+    "weights": [0.65, 0.35]
+  },
+  "HealthTech": {
+    "primary": ["HealthTech Engineer", "Healthcare Software Developer", "Clinical Systems Analyst", "HIPAA Compliance Engineer", "Medical Device Software Engineer"],
+    "secondary": ["HealthTech Lead", "Director of Healthcare IT", "VP of Engineering"],
+    "weights": [0.65, 0.35]
+  },
+  "QA & Testing": {
+    "primary": ["QA Engineer", "Software Tester", "Test Automation Engineer", "SDET", "Performance Tester", "Quality Analyst"],
+    "secondary": ["QA Lead", "QA Manager", "Director of Quality"],
+    "weights": [0.7, 0.3]
+  },
+  "Product Management": {
+    "primary": ["Product Manager", "Technical Product Manager", "Product Owner", "Associate Product Manager"],
+    "secondary": ["Senior Product Manager", "Director of Product", "VP of Product", "CPO"],
+    "weights": [0.6, 0.4]
+  },
+  "UI/UX Design": {
+    "primary": ["UX Designer", "UI Designer", "Product Designer", "Interaction Designer", "UX Researcher", "Visual Designer"],
+    "secondary": ["Design Lead", "Head of Design", "Design Director", "VP of Design"],
+    "weights": [0.65, 0.35]
+  },
+  "Finance": {
+    "primary": ["Financial Analyst", "Investment Analyst", "Risk Analyst", "Portfolio Analyst", "Credit Analyst"],
+    "secondary": ["Finance Manager", "Controller", "CFO", "VP of Finance"],
+    "weights": [0.6, 0.4]
+  },
+  "Accounting": {
+    "primary": ["Staff Accountant", "Senior Accountant", "Tax Accountant", "Auditor", "Cost Accountant", "Forensic Accountant"],
+    "secondary": ["Accounting Manager", "Controller", "CFO", "Partner"],
+    "weights": [0.6, 0.4]
+  },
+  "Healthcare": {
+    "primary": ["Registered Nurse", "Medical Technologist", "Healthcare Administrator", "Clinical Research Coordinator", "Medical Coder"],
+    "secondary": ["Nursing Manager", "Director of Patient Services", "Chief Nursing Officer", "Healthcare Director"],
+    "weights": [0.6, 0.4]
+  },
+  "Marketing": {
+    "primary": ["Marketing Manager", "Digital Marketing Specialist", "Content Strategist", "SEO Specialist", "Social Media Manager", "Brand Manager"],
+    "secondary": ["Marketing Director", "CMO", "VP of Marketing", "Head of Growth"],
+    "weights": [0.6, 0.4]
+  },
+  "Sales": {
+    "primary": ["Sales Executive", "Account Manager", "Business Development Rep", "Sales Engineer", "Account Executive"],
+    "secondary": ["Sales Director", "VP of Sales", "Regional Sales Manager", "Chief Revenue Officer"],
+    "weights": [0.55, 0.45]
+  },
+  "HR & Recruiting": {
+    "primary": ["HR Generalist", "Recruiter", "Talent Acquisition Specialist", "HR Coordinator", "Compensation Analyst"],
+    "secondary": ["HR Manager", "HR Director", "VP of People", "CHRO"],
+    "weights": [0.6, 0.4]
+  },
+  "Manufacturing": {
+    "primary": ["Production Supervisor", "Quality Control Inspector", "Manufacturing Engineer", "Process Technician", "Industrial Engineer"],
+    "secondary": ["Plant Manager", "Operations Director", "VP of Manufacturing"],
+    "weights": [0.6, 0.4]
+  },
+  "Construction": {
+    "primary": ["Project Manager", "Site Supervisor", "Construction Estimator", "Safety Manager", "Civil Engineer"],
+    "secondary": ["Construction Director", "VP of Operations", "General Contractor"],
+    "weights": [0.6, 0.4]
+  },
+  "Retail": {
+    "primary": ["Store Manager", "Merchandiser", "Inventory Specialist", "Customer Service Manager", "Buyer"],
+    "secondary": ["Regional Manager", "Retail Director", "VP of Retail Operations"],
+    "weights": [0.6, 0.4]
+  },
+  "Logistics": {
+    "primary": ["Logistics Coordinator", "Warehouse Manager", "Supply Chain Analyst", "Fleet Manager", "Procurement Specialist"],
+    "secondary": ["Director of Logistics", "VP of Supply Chain", "Chief Supply Chain Officer"],
+    "weights": [0.6, 0.4]
+  },
+  "Energy": {
+    "primary": ["Energy Analyst", "Power Plant Operator", "Renewable Energy Specialist", "Petroleum Engineer", "Energy Consultant"],
+    "secondary": ["Energy Manager", "Director of Operations", "VP of Engineering"],
+    "weights": [0.6, 0.4]
+  },
+  "Banking": {
+    "primary": ["Bank Teller", "Loan Officer", "Credit Analyst", "Relationship Manager", "Compliance Officer"],
+    "secondary": ["Branch Manager", "VP of Lending", "Director of Operations", "Chief Compliance Officer"],
+    "weights": [0.55, 0.45]
+  }
+}

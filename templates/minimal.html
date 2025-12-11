@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ATS-friendly minimal template: clean, simple, highly parseable */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      padding: 0.5in;
+      color: #000;
+      font-size: 11pt;
+      line-height: 1.35;
+      background: #fff;
+    }
+
+    /* Header */
+    .header {
+      margin-bottom: 12px;
+      border-bottom: 1px solid #000;
+      padding-bottom: 8px;
+    }
+    h1 {
+      font-size: 18pt;
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+    .contact {
+      font-size: 10pt;
+    }
+
+    /* Sections */
+    .section { margin-top: 12px; }
+    h2 {
+      font-size: 11pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Summary */
+    .summary { margin-bottom: 8px; }
+
+    /* Skills */
+    .skills-list { font-size: 10pt; line-height: 1.4; }
+
+    /* Experience */
+    .job { margin-bottom: 10px; page-break-inside: avoid; }
+    .job-line1 { font-weight: bold; }
+    .job-line2 { font-size: 10pt; margin-bottom: 3px; }
+    .job ul { margin: 3px 0 0 16px; padding: 0; }
+    .job li { font-size: 10pt; margin-bottom: 2px; }
+
+    /* Education */
+    .edu { margin-bottom: 6px; }
+    .edu p { font-size: 10pt; }
+
+    /* Certifications */
+    .certs { margin: 0; padding-left: 16px; }
+    .certs li { font-size: 10pt; margin-bottom: 2px; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1>{{ name }}</h1>
+    <p class="contact">{{ email }} | {{ phone }} | {{ location }}</p>
+  </header>
+
+  <section class="section">
+    <h2>Summary</h2>
+    <p class="summary">{{ summary }}</p>
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <p class="skills-list">{{ skills | join(', ') }}</p>
+  </section>
+
+  <section class="section">
+    <h2>Experience</h2>
+    {% for job in experience %}
+    <article class="job">
+      <div class="job-line1">{{ job.title }}</div>
+      <div class="job-line2">{{ job.company }}, {{ job.location }} | {{ job.start_date }} – {{ job.end_date }}</div>
+      <ul>
+        {% for bullet in job.bullets %}
+        <li>{{ bullet }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </section>
+
+  <section class="section">
+    <h2>Education</h2>
+    {% for edu in education %}
+    <div class="edu">
+      <p><strong>{{ edu.degree }}</strong>, {{ edu.institution }}, {{ edu.year }}{% if edu.gpa %} (GPA: {{ edu.gpa }}){% endif %}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+  {% if certifications and certifications|length > 0 %}
+  <section class="section">
+    <h2>Certifications</h2>
+    <ul class="certs">
+      {% for cert in certifications %}
+      <li>{{ cert }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</body>
+</html>

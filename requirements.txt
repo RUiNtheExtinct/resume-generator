@@ -1,0 +1,6 @@
+openai
+jinja2
+weasyprint
+faker
+tqdm
+rich

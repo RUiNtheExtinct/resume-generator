@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    /* ATS-friendly: Simple single-column layout, standard fonts, clear hierarchy */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0.5in;
+      color: #000;
+      font-size: 11pt;
+      line-height: 1.4;
+      background: #fff;
+    }
+
+    /* Header - Name and Contact */
+    .header {
+      text-align: center;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #333;
+    }
+    h1 {
+      font-size: 22pt;
+      font-weight: bold;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .contact {
+      font-size: 10pt;
+      color: #333;
+    }
+    .contact span { margin: 0 8px; }
+
+    /* Section styling - ATS reads these headers */
+    .section { margin-top: 14px; }
+    h2 {
+      font-size: 12pt;
+      font-weight: bold;
+      text-transform: uppercase;
+      border-bottom: 1px solid #666;
+      padding-bottom: 3px;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+
+    /* Summary */
+    .summary { margin-bottom: 10px; text-align: justify; }
+
+    /* Skills - comma-separated for ATS parsing */
+    .skills { margin-bottom: 8px; }
+    .skills-list { line-height: 1.5; }
+
+    /* Experience entries */
+    .job { margin-bottom: 12px; page-break-inside: avoid; }
+    .job-header { margin-bottom: 4px; }
+    .job-title { font-weight: bold; font-size: 11pt; }
+    .job-company { font-size: 10pt; }
+    .job-dates { font-size: 10pt; color: #444; }
+    .job ul {
+      margin: 4px 0 0 18px;
+      padding: 0;
+    }
+    .job li {
+      margin-bottom: 3px;
+      font-size: 10pt;
+      text-align: justify;
+    }
+
+    /* Education */
+    .edu { margin-bottom: 8px; }
+    .edu-degree { font-weight: bold; }
+    .edu-details { font-size: 10pt; color: #333; }
+
+    /* Certifications */
+    .certs { margin: 0; padding-left: 18px; }
+    .certs li { margin-bottom: 3px; font-size: 10pt; }
+  </style>
+</head>
+<body>
+  <!-- Header with contact info - ATS parses this first -->
+  <header class="header">
+    <h1>{{ name }}</h1>
+    <p class="contact">
+      <span>{{ email }}</span> |
+      <span>{{ phone }}</span> |
+      <span>{{ location }}</span>
+    </p>
+  </header>
+
+  <!-- Professional Summary -->
+  <section class="section">
+    <h2>Professional Summary</h2>
+    <p class="summary">{{ summary }}</p>
+  </section>
+
+  <!-- Skills - ATS keyword matching -->
+  <section class="section">
+    <h2>Skills</h2>
+    <p class="skills-list">{{ skills | join(' • ') }}</p>
+  </section>
+
+  <!-- Professional Experience -->
+  <section class="section">
+    <h2>Professional Experience</h2>
+    {% for job in experience %}
+    <article class="job">
+      <div class="job-header">
+        <div class="job-title">{{ job.title }}</div>
+        <div class="job-company">{{ job.company }} — {{ job.location }}</div>
+        <div class="job-dates">{{ job.start_date }} – {{ job.end_date }}</div>
+      </div>
+      <ul>
+        {% for bullet in job.bullets %}
+        <li>{{ bullet }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    {% endfor %}
+  </section>
+
+  <!-- Education -->
+  <section class="section">
+    <h2>Education</h2>
+    {% for edu in education %}
+    <div class="edu">
+      <div class="edu-degree">{{ edu.degree }}</div>
+      <div class="edu-details">{{ edu.institution }}{% if edu.year %}, {{ edu.year }}{% endif %}{% if edu.gpa %} — GPA: {{ edu.gpa }}{% endif %}</div>
+    </div>
+    {% endfor %}
+  </section>
+
+  <!-- Certifications -->
+  {% if certifications and certifications|length > 0 %}
+  <section class="section">
+    <h2>Certifications</h2>
+    <ul class="certs">
+      {% for cert in certifications %}
+      <li>{{ cert }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endif %}
+</body>
+</html>
